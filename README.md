@@ -1,1 +1,3 @@
-# first_pygame
+# Pygame
+
+Initial learning of Pygame and testing functionality
