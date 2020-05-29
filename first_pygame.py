@@ -21,6 +21,18 @@ while run:
         if event.type == pygame.QUIT:
             run = False
 
+    keyPress = pygame.key.get_pressed()
+
+    # Created object will move with keypress
+    if keyPress[pygame.K_LEFT]:
+      x -= velocity
+    if keyPress[pygame.K_RIGHT]:
+      x += velocity
+    if keyPress[pygame.K_UP]:
+      y -= velocity
+    if keyPress[pygame.K_DOWN]:
+      y += velocity
+
     pygame.draw.rect(win, (255,0,0), (x, y, width, height))
     pygame.display.update()
 
