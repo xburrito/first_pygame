@@ -54,7 +54,6 @@ class player(object):
         self.jumping = False
         self.left = False
         self.right = False
-        self.run = True
 
 # Performs real-time alterations to the assets displayed within the window
 def refreshGameWindow():
@@ -82,6 +81,8 @@ def refreshGameWindow():
 
 
 # Main While Loop
+ourPlayer = player(300, 410, 64, 64)
+run = True
 while run:
     # Sets the FPS
     clock.tick(39)
@@ -95,46 +96,46 @@ while run:
 
     # Created object will move with keypress (Arrow Keys)
     # Second condition checks to make sure movable object stays within the window's border
-    if keyPress[pygame.K_LEFT] and (x > velocity):
-      x -= velocity
-      left = True
-      right = False
+    if keyPress[pygame.K_LEFT] and (ourPlayer.x > ourPlayer.velocity):
+      ourPlayer.x -= ourPlayer.velocity
+      ourPlayer.left = True
+      ourPlayer.right = False
 
-    elif keyPress[pygame.K_RIGHT] and (x < screenWidth - width):
-      x += velocity
-      left = False
-      right = True
+  elif keyPress[pygame.K_RIGHT] and (ourPlayer.x < screenWidth - ourPlayer.width):
+      ourPlayer.x += ourPlayer.velocity
+      ourPlayer.left = False
+      ourPlayer.right = True
 
     else:
-        left = False
-        right = False
-        walk_count = 0
+        ourPlayer.left = False
+        ourPlayer.right = False
+        ourPlayer.walk_count = 0
 
     # Moving rectangle up/down is only allowed when object isn't performing jumping action
     if not(jumping):
-      if keyPress[pygame.K_UP] and (y > velocity):
-        y -= velocity
-      if keyPress[pygame.K_DOWN] and (y < screenHeight - height):
-        y += velocity
+      if keyPress[pygame.K_UP] and (ourPlayer.y > ourPlayer.velocity):
+        ourPlayer.y -= ourPlayer.velocity
+      if keyPress[pygame.K_DOWN] and (ourPlayer.y < screenHeight - ourPlayer.height):
+        ourPlayer.y += ourPlayer.velocity
       if keyPress[pygame.K_SPACE]:
-        jumping = True
-        right = False
-        left = False
-        walk_count = 0
+        ourPlayer.jumping = True
+        ourPlayer.right = False
+        ourPlayer.left = False
+        ourPlayer.walk_count = 0
 
     # Moving left/right is still allowed when jumping motion is in effect
     else:
-      if jump_count >= -10:
+      if ourPlayer.jump_count >= -10:
         neg = 1
-        if jump_count < 0:
+        if ourPlayer.jump_count < 0:
           neg = -1
 
         # Jumping action is performed with a negative parabola effect
-        y -= (jump_count ** 2) / 2 * neg
-        jump_count -= 1
+        ourPlayer.y -= (ourPlayer.jump_count ** 2) / 2 * neg
+        ourPlayer.jump_count -= 1
       else:
-        jumping = False
-        jump_count = 10
+        ourPlayer.jumping = False
+        ourPlayer.jump_count = 10
 
     refreshGameWindow()
 
