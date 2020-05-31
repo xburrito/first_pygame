@@ -18,13 +18,13 @@ move_Left = [pygame.image.load('Assets/Skeleton/Walking_Left/WalkLeft_1.png'),py
               pygame.image.load('Assets/Skeleton/Walking_Left/WalkLeft_11.png'),pygame.image.load('Assets/Skeleton/Walking_Left/WalkLeft_12.png'),
               pygame.image.load('Assets/Skeleton/Walking_Left/WalkLeft_13.png')]
 
-move_Right = [pygame.image.load('Assets/Skeleton/Walking_Right/Walk_1.png'),pygame.image.load('Assets/Skeleton/Walking_Right/Walk_2.png'),
-              pygame.image.load('Assets/Skeleton/Walking_Right/Walk_3.png'),pygame.image.load('Assets/Skeleton/Walking_Right/Walk_4.png'),
-              pygame.image.load('Assets/Skeleton/Walking_Right/Walk_5.png'),pygame.image.load('Assets/Skeleton/Walking_Right/Walk_6.png'),
-              pygame.image.load('Assets/Skeleton/Walking_Right/Walk_7.png'),pygame.image.load('Assets/Skeleton/Walking_Right/Walk_8.png'),
-              pygame.image.load('Assets/Skeleton/Walking_Right/Walk_9.png'),pygame.image.load('Assets/Skeleton/Walking_Right/Walk_10.png'),
-              pygame.image.load('Assets/Skeleton/Walking_Right/Walk_11.png'),pygame.image.load('Assets/Skeleton/Walking_Right/Walk_12.png'),
-              pygame.image.load('Assets/Skeleton/Walking_Right/Walk_13.png')]
+move_Right = [pygame.image.load('Assets/Skeleton/Walking_Right/walk_1.png'),pygame.image.load('Assets/Skeleton/Walking_Right/walk_2.png'),
+              pygame.image.load('Assets/Skeleton/Walking_Right/walk_3.png'),pygame.image.load('Assets/Skeleton/Walking_Right/walk_4.png'),
+              pygame.image.load('Assets/Skeleton/Walking_Right/walk_5.png'),pygame.image.load('Assets/Skeleton/Walking_Right/walk_6.png'),
+              pygame.image.load('Assets/Skeleton/Walking_Right/walk_7.png'),pygame.image.load('Assets/Skeleton/Walking_Right/walk_8.png'),
+              pygame.image.load('Assets/Skeleton/Walking_Right/walk_9.png'),pygame.image.load('Assets/Skeleton/Walking_Right/walk_10.png'),
+              pygame.image.load('Assets/Skeleton/Walking_Right/walk_11.png'),pygame.image.load('Assets/Skeleton/Walking_Right/walk_12.png'),
+              pygame.image.load('Assets/Skeleton/Walking_Right/walk_13.png')]
 
 idle = [pygame.image.load('Assets/Skeleton/Idle/Idle_1.png'),pygame.image.load('Assets/Skeleton/Idle/Idle_2.png'),
         pygame.image.load('Assets/Skeleton/Idle/Idle_3.png'),pygame.image.load('Assets/Skeleton/Idle/Idle_4.png'),
