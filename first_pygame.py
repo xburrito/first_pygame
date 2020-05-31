@@ -45,12 +45,20 @@ x = 50  # Initial position on x-axis
 y = 400 # Initial position on y-axis
 
 # Jumping Mechanic
-jumping = False
 jump_count = 10
+walk_count = 0
+jumping = False
 left = False
 right = False
-
 run = True
+
+def refreshGameWindow():
+    global walk_count
+    win.blit(bg, (0,0))
+    pygame.draw.rect(win, (255,0,0), (x, y, width_of_rectangle, height_of_rectangle))
+    pygame.display.update()
+
+
 # Main While Loop
 while run:
     pygame.time.delay(100)
@@ -91,9 +99,5 @@ while run:
       else:
         jumping = False
         jump_count = 10
-
-    win.fill((0,0,0))
-    pygame.draw.rect(win, (255,0,0), (x, y, width_of_rectangle, height_of_rectangle))
-    pygame.display.update()
 
 pygame.quit()
