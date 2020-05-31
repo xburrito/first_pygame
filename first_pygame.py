@@ -55,7 +55,7 @@ run = True
 # Performs real-time alterations to the assets displayed within the window
 def refreshGameWindow():
     global walk_count
-    
+
     # Sets background-image
     win.blit(bg, (0,0))
     pygame.draw.rect(win, (255,0,0), (x, y, width_of_rectangle, height_of_rectangle))
@@ -77,8 +77,18 @@ while run:
     # Second condition checks to make sure movable object stays within the window's border
     if keyPress[pygame.K_LEFT] and (x > velocity):
       x -= velocity
-    if keyPress[pygame.K_RIGHT] and (x < screenWidth - width_of_rectangle):
+      left = True
+      right = False
+
+    elif keyPress[pygame.K_RIGHT] and (x < screenWidth - width_of_rectangle):
       x += velocity
+      left = False
+      right = True
+
+    else:
+        left = False
+        right = False
+        walk_count = 0
 
     # Moving rectangle up/down is only allowed when object isn't performing jumping action
     if not(jumping):
@@ -88,6 +98,9 @@ while run:
         y += velocity
       if keyPress[pygame.K_SPACE]:
         jumping = True
+        right = False
+        left = False
+        walk_count = 0
 
     # Moving left/right is still allowed when jumping motion is in effect
     else:
