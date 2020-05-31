@@ -47,8 +47,11 @@ y = 400 # Initial position on y-axis
 # Jumping Mechanic
 jumping = False
 jump_count = 10
+left = False
+right = False
 
 run = True
+# Main While Loop
 while run:
     pygame.time.delay(100)
 
