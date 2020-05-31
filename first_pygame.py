@@ -83,7 +83,7 @@ def refreshGameWindow():
 
 
 # Main While Loop
-ourPlayer = player(300, 410, 64, 64)
+ourPlayer = player(300, 540, 128, 128)
 run = True
 while run:
     # Sets the FPS
