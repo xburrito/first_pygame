@@ -52,8 +52,11 @@ left = False
 right = False
 run = True
 
+# Performs real-time alterations to the assets displayed within the window
 def refreshGameWindow():
     global walk_count
+    
+    # Sets background-image
     win.blit(bg, (0,0))
     pygame.draw.rect(win, (255,0,0), (x, y, width_of_rectangle, height_of_rectangle))
     pygame.display.update()
@@ -99,5 +102,7 @@ while run:
       else:
         jumping = False
         jump_count = 10
+
+    refreshGameWindow()
 
 pygame.quit()
