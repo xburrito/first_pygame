@@ -47,6 +47,7 @@ y = 400 # Initial position on y-axis
 # Jumping Mechanic
 jump_count = 10
 walk_count = 0
+idle_motion = 0
 jumping = False
 left = False
 right = False
@@ -55,10 +56,27 @@ run = True
 # Performs real-time alterations to the assets displayed within the window
 def refreshGameWindow():
     global walk_count
+    global idle_motion
 
     # Sets background-image
     win.blit(bg, (0,0))
-    pygame.draw.rect(win, (255,0,0), (x, y, width_of_rectangle, height_of_rectangle))
+
+    if (walk_count+1 >= 39):
+        walk_count = 0
+    if (idle_motion+1 >= 33):
+        idle_motion = 0
+
+    if left:
+        win.blit(move_Left[walk_count//3], (x,y))
+        walk_count += 1
+    elif right:
+        win.blit(move_Right[walk_count//3], (x,y))
+        walk_count += 1
+    else:
+        win.blit(idle[idle_motion//3], (x,y))
+
+
+    # pygame.draw.rect(win, (255,0,0), (x, y, width_of_rectangle, height_of_rectangle))
     pygame.display.update()
 
 
