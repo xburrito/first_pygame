@@ -9,6 +9,33 @@ screenHeight = 500
 win = pygame.display.set_mode((screenWidth, screenHeight))
 pygame.display.set_caption("Title of Game")
 
+# Importing Assets
+move_Left = [pygame.image.load('Assets/Skeleton/Walking_Left/WalkLeft_1.png'),pygame.image.load('Assets/Skeleton/Walking_Left/WalkLeft_2.png'),
+              pygame.image.load('Assets/Skeleton/Walking_Left/WalkLeft_3.png'),pygame.image.load('Assets/Skeleton/Walking_Left/WalkLeft_4.png'),
+              pygame.image.load('Assets/Skeleton/Walking_Left/WalkLeft_5.png'),pygame.image.load('Assets/Skeleton/Walking_Left/WalkLeft_6.png'),
+              pygame.image.load('Assets/Skeleton/Walking_Left/WalkLeft_7.png'),pygame.image.load('Assets/Skeleton/Walking_Left/WalkLeft_8.png'),
+              pygame.image.load('Assets/Skeleton/Walking_Left/WalkLeft_9.png'),pygame.image.load('Assets/Skeleton/Walking_Left/WalkLeft_10.png'),
+              pygame.image.load('Assets/Skeleton/Walking_Left/WalkLeft_11.png'),pygame.image.load('Assets/Skeleton/Walking_Left/WalkLeft_12.png'),
+              pygame.image.load('Assets/Skeleton/Walking_Left/WalkLeft_13.png')]
+
+move_Right = [pygame.image.load('Assets/Skeleton/Walking_Right/Walk_1.png'),pygame.image.load('Assets/Skeleton/Walking_Right/Walk_2.png'),
+              pygame.image.load('Assets/Skeleton/Walking_Right/Walk_3.png'),pygame.image.load('Assets/Skeleton/Walking_Right/Walk_4.png'),
+              pygame.image.load('Assets/Skeleton/Walking_Right/Walk_5.png'),pygame.image.load('Assets/Skeleton/Walking_Right/Walk_6.png'),
+              pygame.image.load('Assets/Skeleton/Walking_Right/Walk_7.png'),pygame.image.load('Assets/Skeleton/Walking_Right/Walk_8.png'),
+              pygame.image.load('Assets/Skeleton/Walking_Right/Walk_9.png'),pygame.image.load('Assets/Skeleton/Walking_Right/Walk_10.png'),
+              pygame.image.load('Assets/Skeleton/Walking_Right/Walk_11.png'),pygame.image.load('Assets/Skeleton/Walking_Right/Walk_12.png'),
+              pygame.image.load('Assets/Skeleton/Walking_Right/Walk_13.png')]
+
+idle = [pygame.image.load('Assets/Skeleton/Idle/Idle_1.png'),pygame.image.load('Assets/Skeleton/Idle/Idle_2.png'),
+        pygame.image.load('Assets/Skeleton/Idle/Idle_3.png'),pygame.image.load('Assets/Skeleton/Idle/Idle_4.png'),
+        pygame.image.load('Assets/Skeleton/Idle/Idle_5.png'),pygame.image.load('Assets/Skeleton/Idle/Idle_6.png'),
+        pygame.image.load('Assets/Skeleton/Idle/Idle_7.png'),pygame.image.load('Assets/Skeleton/Idle/Idle_8.png'),
+        pygame.image.load('Assets/Skeleton/Idle/Idle_9.png'),pygame.image.load('Assets/Skeleton/Idle/Idle_10.png'),
+        pygame.image.load('Assets/Skeleton/Idle/Idle_11.png')]
+
+bg = [pygame.image.load('Assets/Background/full-background.png')]
+
+
 # Red Rectangle properties
 width_of_rectangle = 50
 height_of_rectangle = 75
@@ -16,7 +43,6 @@ height_of_rectangle = 75
 velocity = 5 # Speed of rectangle
 x = 50  # Initial position on x-axis
 y = 400 # Initial position on y-axis
-
 
 # Jumping Mechanic
 jumping = False
