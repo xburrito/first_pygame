@@ -37,22 +37,24 @@ bg = pygame.image.load('Assets/Background/full-background.png')
 
 clock = pygame.time.Clock()
 
-# Red Rectangle properties
-width_of_rectangle = 50
-height_of_rectangle = 75
+class player(object):
+    def __init__(self, x, y, width, height):
 
-velocity = 5 # Speed of rectangle
-x = 50  # Initial position on x-axis
-y = 400 # Initial position on y-axis
+        self.x = x                  # init pos on x-axis
+        self.y = y                  # init pos on y-axis
 
-# Jumping Mechanic
-jump_count = 10
-walk_count = 0
-idle_motion = 0
-jumping = False
-left = False
-right = False
-run = True
+        self.width = width
+        self.height = height
+        self.velocity = 5           # Movement Speed
+
+        # Jumping Mechanic
+        self.jump_count = 10
+        self.walk_count = 0
+        self.idle_motion = 0
+        self.jumping = False
+        self.left = False
+        self.right = False
+        self.run = True
 
 # Performs real-time alterations to the assets displayed within the window
 def refreshGameWindow():
@@ -98,7 +100,7 @@ while run:
       left = True
       right = False
 
-    elif keyPress[pygame.K_RIGHT] and (x < screenWidth - width_of_rectangle):
+    elif keyPress[pygame.K_RIGHT] and (x < screenWidth - width):
       x += velocity
       left = False
       right = True
@@ -112,7 +114,7 @@ while run:
     if not(jumping):
       if keyPress[pygame.K_UP] and (y > velocity):
         y -= velocity
-      if keyPress[pygame.K_DOWN] and (y < screenHeight - height_of_rectangle):
+      if keyPress[pygame.K_DOWN] and (y < screenHeight - height):
         y += velocity
       if keyPress[pygame.K_SPACE]:
         jumping = True
