@@ -3,8 +3,8 @@ import pygame
 pygame.init()
 
 # Display window of game created
-screenWidth = 500
-screenHeight = 500
+screenWidth = 800
+screenHeight = 600
 
 win = pygame.display.set_mode((screenWidth, screenHeight))
 pygame.display.set_caption("Title of Game")
@@ -33,7 +33,7 @@ idle = [pygame.image.load('Assets/Skeleton/Idle/Idle_1.png'),pygame.image.load('
         pygame.image.load('Assets/Skeleton/Idle/Idle_9.png'),pygame.image.load('Assets/Skeleton/Idle/Idle_10.png'),
         pygame.image.load('Assets/Skeleton/Idle/Idle_11.png')]
 
-bg = [pygame.image.load('Assets/Background/full-background.png')]
+bg = pygame.image.load('Assets/Background/full-background.png')
 
 clock = pygame.time.Clock()
 
