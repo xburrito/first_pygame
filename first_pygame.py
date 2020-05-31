@@ -55,28 +55,30 @@ class player(object):
         self.left = False
         self.right = False
 
+    def draw(self, win):
+        if (self.walk_count+1 >= 39):
+            self.walk_count = 0
+        if (self.idle_motion+1 >= 33):
+            self.idle_motion = 0
+
+        if self.left:
+            win.blit(move_Left[self.walk_count//3], (self.x,self.y))
+            self.walk_count += 1
+        elif self.right:
+            win.blit(move_Right[self.walk_count//3], (self.x,self.y))
+            self.walk_count += 1
+        else:
+            win.blit(idle[self.idle_motion//3], (self.x,self.y))
+
 # Performs real-time alterations to the assets displayed within the window
 def refreshGameWindow():
-    global walk_count
-    global idle_motion
+    # global walk_count
+    # global idle_motion
 
     # Sets background-image
     win.blit(bg, (0,0))
 
-    if (walk_count+1 >= 39):
-        walk_count = 0
-    if (idle_motion+1 >= 33):
-        idle_motion = 0
-
-    if left:
-        win.blit(move_Left[walk_count//3], (x,y))
-        walk_count += 1
-    elif right:
-        win.blit(move_Right[walk_count//3], (x,y))
-        walk_count += 1
-    else:
-        win.blit(idle[idle_motion//3], (x,y))
-
+    ourPlayer.draw(win)
     pygame.display.update()
 
 
@@ -101,7 +103,7 @@ while run:
       ourPlayer.left = True
       ourPlayer.right = False
 
-  elif keyPress[pygame.K_RIGHT] and (ourPlayer.x < screenWidth - ourPlayer.width):
+    elif keyPress[pygame.K_RIGHT] and (ourPlayer.x < screenWidth - ourPlayer.width):
       ourPlayer.x += ourPlayer.velocity
       ourPlayer.left = False
       ourPlayer.right = True
@@ -112,7 +114,7 @@ while run:
         ourPlayer.walk_count = 0
 
     # Moving rectangle up/down is only allowed when object isn't performing jumping action
-    if not(jumping):
+    if not(ourPlayer.jumping):
       if keyPress[pygame.K_UP] and (ourPlayer.y > ourPlayer.velocity):
         ourPlayer.y -= ourPlayer.velocity
       if keyPress[pygame.K_DOWN] and (ourPlayer.y < screenHeight - ourPlayer.height):
