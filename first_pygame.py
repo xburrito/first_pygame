@@ -35,6 +35,7 @@ idle = [pygame.image.load('Assets/Skeleton/Idle/Idle_1.png'),pygame.image.load('
 
 bg = [pygame.image.load('Assets/Background/full-background.png')]
 
+clock = pygame.time.Clock()
 
 # Red Rectangle properties
 width_of_rectangle = 50
@@ -75,14 +76,13 @@ def refreshGameWindow():
     else:
         win.blit(idle[idle_motion//3], (x,y))
 
-
-    # pygame.draw.rect(win, (255,0,0), (x, y, width_of_rectangle, height_of_rectangle))
     pygame.display.update()
 
 
 # Main While Loop
 while run:
-    pygame.time.delay(100)
+    # Sets the FPS
+    clock.tick(39)
 
     for event in pygame.event.get():
         # Exits window and terminates application upon quitting program
